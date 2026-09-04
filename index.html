@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Masificación | Interventor</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <aside class="menu">
+    <div class="marca"><img src="logo_fise.png" alt="FISE"><div><strong>Paulet</strong><small>Perfil Interventor</small></div></div>
+    <nav>
+      <button class="activo" data-vista="inicio"><svg class="icono-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5 9 3l6 2.5L20 3v15.5L15 21l-6-2.5L4 21V5.5Z"/><path d="M9 3v15.5M15 5.5V21"/><circle cx="12" cy="11.5" r="2"/></svg><span>Inicio</span></button>
+      <button data-vista="ncs"><svg class="icono-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3.8 19h16.4L12 3Z"/><path d="M12 9v4M12 16h.01"/></svg><span>No conformidades</span></button>
+      <button data-vista="verificaciones"><svg class="icono-menu" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5h6M8.5 12l2.2 2.2 4.8-5"/></svg><span>Verificaciones</span></button>
+      <button data-vista="historial"><svg class="icono-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h7l2 2h9v11H3zM3 7V4h7l2 2h7v3"/><path d="M8 13h8M8 17h5"/></svg><span>Historial</span></button>
+      <a href="appmovil/index.html"><svg class="icono-menu" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 18h4"/></svg><span>Abrir app móvil</span></a>
+    </nav>
+    <footer class="menu-pie"><button data-vista="perfil"><svg class="icono-menu" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.3-6 8-6s7.3 2 8 6"/></svg><span>Perfil</span></button><button id="cerrarSesion" type="button"><svg class="icono-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4H5v16h9M11 12h10M17 8l4 4-4 4"/></svg><span>Cerrar sesión</span></button></footer>
+  </aside>
+  <main>
+    <header><div class="cabecera-titulo"><button class="menu-toggle" id="alternarMenu" type="button" aria-label="Cerrar menú" aria-expanded="true"><i></i><i></i><i></i></button><div><small>MASIFICACIÓN DE GAS NATURAL</small><h1 id="titulo">Inicio</h1></div></div><div class="cabecera-acciones"><button id="alternarTema" type="button" aria-label="Cambiar apariencia" aria-controls="selectorApariencia" aria-expanded="false" title="Cambiar apariencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-1.1-.9-2-2-2h-1.2a1.8 1.8 0 0 1-1.8-1.8c0-1 .8-1.8 1.8-1.8h.5A2.7 2.7 0 0 0 12 3Z"/><circle cx="7.8" cy="11" r=".8"/><circle cx="10.5" cy="7.5" r=".8"/><circle cx="7.2" cy="15" r=".8"/></svg></button><section class="selector-apariencia" id="selectorApariencia" hidden aria-label="Apariencia"><h2>APARIENCIA</h2><div class="opciones-apariencia"><button type="button" data-estilo="paulet"><span class="radio-estilo" aria-hidden="true"></span><span>Estilo Paulet</span><b aria-hidden="true">✓</b></button><button type="button" data-estilo="fise"><span class="radio-estilo" aria-hidden="true"></span><span>Estilo FISE</span><b aria-hidden="true">✓</b></button></div></section></div></header>
+
+    <section class="vista activa" id="inicio">
+      <div class="bienvenida"><div><small>ROL DE INTERVENTOR</small><h2>Control y verificación de obra</h2><p>Revise los levantamientos remitidos por el contratista y emita su resultado de verificación.</p></div><a href="appmovil/index.html">Usar app móvil</a></div>
+      <div class="metricas"><article><small>NC por revisar</small><strong>2</strong><span>Levantamientos recibidos</span></article><article><small>NC emitidas</small><strong>3</strong><span>En seguimiento</span></article><article><small>NC archivadas</small><strong>1</strong><span>Expedientes finalizados</span></article><article><small>Verificadas hoy</small><strong>4</strong><span>Con evidencia validada</span></article></div>
+      <section class="tarjeta"><header><div><h3>Acciones pendientes</h3><p>Actividades que requieren una decisión del interventor.</p></div></header><div class="pendientes"><article><b class="alerta">NC 2500002</b><div><strong>Levantamiento enviado por contratista</strong><p>Seguridad / Civil · Evidencias y plan de acción adjuntos.</p></div><button data-ir="verificaciones">Revisar</button></article><article><b class="aviso">NC 2500011</b><div><strong>Vence en 2 días</strong><p>OCA · Calidad · Ensayo de compactación pendiente.</p></div><button data-ir="ncs">Ver NC</button></article></div></section>
+    </section>
+
+    <section class="vista" id="ncs" hidden>
+      <div class="encabezado"><div><h2>No conformidades</h2><p>Emita observaciones y asigne el plazo de levantamiento al contratista.</p></div><button class="principal" id="nuevaNc">+ Emitir NC</button></div>
+      <section class="tarjeta tabla"><table><thead><tr><th>NC</th><th>Contratista</th><th>Especialidad</th><th>Vencimiento</th><th>Estado</th><th></th></tr></thead><tbody><tr><td><b>2500002</b></td><td>NAGASCO S.A.C.</td><td>Seguridad / Civil</td><td>12/07/2025</td><td><span class="estado azul">En verificación</span></td><td><button data-ir="verificaciones">Revisar</button></td></tr><tr><td><b>2500011</b></td><td>NAGASCO S.A.C.</td><td>Calidad</td><td>06/09/2026</td><td><span class="estado amarillo">Por vencer</span></td><td><button>Ver detalle</button></td></tr><tr><td><b>2500008</b></td><td>NAGASCO S.A.C.</td><td>HSE</td><td>—</td><td><span class="estado verde">Cerrada</span></td><td><button>Ver acta</button></td></tr></tbody></table></section>
+    </section>
+
+    <section class="vista" id="verificaciones" hidden>
+      <div class="encabezado"><div><h2>Verificar levantamiento</h2><p>NC 2500002 · El contratista remitió su sustento para evaluación.</p></div><span class="estado azul">En verificación</span></div>
+      <div class="revision"><section class="tarjeta"><header><div><h3>Sustento del contratista</h3><p>Información enviada para levantar la no conformidad.</p></div></header><dl><dt>Causa raíz</dt><dd>Programación de actividades en horario extendido sin completar los controles requeridos.</dd><dt>Acción correctiva</dt><dd>Se actualizó el ATS, se realizó charla de seguridad y se registró el permiso de trabajo.</dd><dt>Responsable</dt><dd>Residente de obra · NAGASCO S.A.C.</dd></dl><div class="archivos"><b>Evidencias adjuntas</b><span>▧ ATS actualizado.pdf</span><span>▧ Charla de seguridad.jpg</span><span>▧ Permiso de trabajo.pdf</span></div></section><section class="tarjeta decision"><header><div><h3>Resultado de verificación</h3><p>Solo el Interventor puede validar o devolver el levantamiento.</p></div></header><label>Resultado<select id="resultado"><option value="">Seleccione una opción</option><option>Conforme: levantar NC</option><option>No conforme: devolver al contratista</option></select></label><label>Comentario de verificación<textarea id="comentario" placeholder="Indique la evidencia verificada o el motivo de devolución."></textarea></label><div><button id="guardarRevision">Guardar borrador</button><button class="principal" id="enviarRevision">Registrar resultado</button></div></section></div>
+    </section>
+
+    <section class="vista" id="historial" hidden>
+      <div class="encabezado"><div><h2>Historial y trazabilidad</h2><p>Registro de emisión, levantamiento, verificación, cierre y archivo de cada NC.</p></div></div>
+      <section class="tarjeta tabla"><table><thead><tr><th>NC</th><th>Última acción</th><th>Responsable</th><th>Fecha</th><th>Estado</th><th></th></tr></thead><tbody><tr><td><b>2500008</b></td><td>Acta de cierre emitida</td><td>Interventor</td><td>29/08/2026</td><td><span class="estado verde">Cerrada</span></td><td><button data-abrir-acta="2500008">Ver acta</button></td></tr><tr><td><b>2500002</b></td><td>Levantamiento recibido</td><td>Contratista</td><td>04/09/2026</td><td><span class="estado azul">En verificación</span></td><td><button data-ir="verificaciones">Revisar</button></td></tr><tr><td><b>2500001</b></td><td>Expediente archivado</td><td>Interventor</td><td>22/08/2026</td><td><span class="estado verde">Archivada</span></td><td><button data-abrir-acta="2500001">Ver acta</button></td></tr></tbody></table></section>
+    </section>
+
+    <section class="vista" id="perfil" hidden>
+      <div class="perfil-encabezado"><span class="perfil-icono"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-4 3.3-6 8-6s7.3 2 8 6"/></svg></span><div><small>CUENTA DE USUARIO</small><h2>Mi perfil</h2><p>Administra tus datos y seguridad.</p></div></div>
+      <form class="perfil-grilla" id="formPerfil"><section class="tarjeta tarjeta-perfil"><header><span class="paso-perfil">01</span><div><h3>Datos personales</h3><p>Información principal de tu cuenta.</p></div></header><div class="campos-perfil"><label>Nombres<input id="nombrePerfil" value="Paulet" required></label><label>Apellidos<input id="apellidoPerfil" value="Interventor" required></label><label class="campo-completo">Dirección<input id="direccionPerfil" value="Proyecto Sur Oeste" required></label><label>Correo<input id="correoPerfil" type="email" value="interventor@fise.gob.pe" required></label><label>Teléfono<input id="telefonoPerfil" type="tel" value="999 999 999"></label></div><button class="principal boton-perfil" type="submit">Guardar cambios</button></section><section class="tarjeta tarjeta-perfil"><header><span class="paso-perfil">02</span><div><h3>Seguridad</h3><p>Tu contraseña no se mostrará. Modifícala solo cuando sea necesario.</p></div></header><div class="campos-perfil campos-seguridad"><label>Contraseña actual<input id="claveActual" type="password" placeholder="Contraseña actual" disabled></label><label class="campo-completo">Nueva contraseña<input id="claveNueva" type="password" placeholder="Nueva contraseña" disabled></label><label class="campo-completo">Repetir nueva contraseña<input id="claveRepetir" type="password" placeholder="Repite la nueva contraseña" disabled></label></div><button class="boton-seguridad" id="modificarClave" type="button">Modificar contraseña</button></section></form>
+    </section>
+
+  </main>
+  <dialog id="modalNc"><form method="dialog"><header><h2>Emitir no conformidad</h2><button aria-label="Cerrar">×</button></header><label>Contratista<select><option>NAGASCO S.A.C.</option></select></label><label>Especialidad<select><option>Calidad</option><option>Seguridad</option><option>Civil</option><option>Mecánica</option></select></label><label>Descripción<textarea required placeholder="Describa el incumplimiento identificado."></textarea></label><label>Plazo de levantamiento<input type="date" required></label><menu><button>Cancelar</button><button class="principal" value="default">Emitir NC</button></menu></form></dialog>
+  <div class="aviso" id="aviso"></div>
+  <script src="app.js"></script>
+</body>
+</html>
